@@ -30,7 +30,7 @@ export const FocusScreen = () => {
                 className="btn btn-outline-primary mt-5"
                 onClick={handleClick}
             >
-                Ficus
+                Focus
             </button>
         </div>
     )

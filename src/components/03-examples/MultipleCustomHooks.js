@@ -28,7 +28,7 @@ export const MultipleCustomHooks = () => {
             {/* como tenemos dos componenetes uno se debe mostar cuando esta cargando
             y el otro cuando la API responde entonces usaremos un ternario */}
             {
-                // si loadingexiste cargar el componente
+                // si loading existe cargar el componente
                 loading
                 ?
                 (
