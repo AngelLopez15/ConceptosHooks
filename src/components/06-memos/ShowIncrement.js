@@ -1,0 +1,18 @@
+import React from 'react'
+
+export const ShowIncrement = React.memo(({increment}) => {
+    
+    console.log('Me volvi a generar')
+
+    return (
+        <button
+            className="btn btn-primary"   
+            onClick={()=>{
+                // mandando un argumento 
+                increment(2)
+            }}
+        >
+            Incrementar
+        </button>
+    )
+})
