@@ -31,9 +31,48 @@ export const ToDoApp = () => {
     console.log(toDos)
 
     return (
-        <div>
-            <h1>TodoApp</h1>
-            <h1 />
+        <div className="container mt-4">
+            <h1>ToDoList App</h1>
+            <hr />
+            <p className="h1">Agregar tarea</p>
+            <hr />
+            <div className="row mb-4">
+                <div className="col-12 col-sm-6">
+                    <form>
+                        <input 
+                            type="text"
+                            name="description"
+                            placeholder="comprar ..."
+                            autoComplete="off"
+                            className="form-control"
+                        />
+                    </form>
+                </div>
+                <div className="col-12 col-sm-6">
+                    <button
+                        className="btn btn-success btn-block"
+                    >Agregar</button>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-12 col-sm-6">
+                    <ul className="list-group list-group-flush">
+                        {
+                            toDos.map((toDo, i) => (
+                                <li
+                                    key={toDo.id}
+                                    className="list-group-item"
+                                ><p className="mb-0">{i+1}. {toDo.desc}</p></li>
+                            ))
+                        }
+                    </ul>
+                </div>
+                <div className="col-12 col-sm-6">
+                    <button
+                        className="btn btn-danger btn-block"
+                    >Borrar</button>
+                </div>
+            </div>
         </div>
     )
 }
