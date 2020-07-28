@@ -1,15 +1,26 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
 import { todoReducer } from './toDoReducer'
+import { useForm } from '../../hooks/useForm'
 
 import './styles.css'
 
 // creando el estado inicial
-const initialState = [{
-    id:new Date().getTime(),
-    desc:'Aprender React',
-    done:false
-}]
+// const initialState = [{
+//     id:new Date().getTime(),
+//     desc:'Aprender React',
+//     done:false
+// }]
 
+const init = () =>{
+    
+    return JSON.parse(localStorage.getItem('toDos')) || []
+
+    // return [{
+    //     id:new Date().getTime(),
+    //     desc:'Aprender React',
+    //     done:false
+    // }]
+}
 
 export const ToDoApp = () => {
 
@@ -26,9 +37,38 @@ export const ToDoApp = () => {
 
     // const [state, dispatch] = useReducer(reducer, initialState, init)
 
-    const [toDos] = useReducer(todoReducer, initialState)
+    const [toDos, dispatch] = useReducer(todoReducer, [], init)
     
-    console.log(toDos)
+    const [{description}, handleInputChange, reset] = useForm({
+        description:''
+    })
+
+    // Para fuardar los datos en localStorage
+    useEffect(() => {
+        localStorage.setItem('toDos', JSON.stringify(toDos))
+    }, [toDos])
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        console.log('hola')
+        if (description.trim().length <= 1) {
+            return
+        }
+
+        const newToDo = {
+            id:new Date().getTime(),
+            desc:description,
+            done:false
+        }
+
+        const action = {
+            type:'add',
+            payload:newToDo
+        }
+
+        dispatch(action)
+        reset()
+    }
 
     return (
         <div className="container mt-4">
@@ -36,25 +76,28 @@ export const ToDoApp = () => {
             <hr />
             <p className="h1">Agregar tarea</p>
             <hr />
-            <div className="row mb-4">
-                <div className="col-12 col-sm-6">
-                    <form>
+            <form onSubmit={handleSubmit}>
+                <div className="row mb-4">  
+                    <div className="col-12 col-sm-6 mb-2">
                         <input 
                             type="text"
                             name="description"
                             placeholder="comprar ..."
                             autoComplete="off"
                             className="form-control"
+                            value={description}
+                            onChange={handleInputChange}
                         />
-                    </form>
-                </div>
-                <div className="col-12 col-sm-6">
+                    </div>
+                    <div className="col-12 col-sm-6">
                     <button
+                        type="submit"
                         className="btn btn-success btn-block"
                     >Agregar</button>
+                    </div>
                 </div>
-            </div>
-            <div className="row">
+            </form>
+            <div className="row mb-2">
                 <div className="col-12 col-sm-6">
                     <ul className="list-group list-group-flush">
                         {
