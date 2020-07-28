@@ -43,14 +43,25 @@ export const ToDoApp = () => {
         description:''
     })
 
-    // Para fuardar los datos en localStorage
+    // Para guardar los datos en localStorage
     useEffect(() => {
         localStorage.setItem('toDos', JSON.stringify(toDos))
     }, [toDos])
 
+    // para borrar una tarea
+    const handleDelete=(toDoId)=>{
+
+        const action = {
+            type:'delete',
+            payload:toDoId
+        }
+
+        dispatch(action)
+    }
+
+    // añade una nueva tarea
     const handleSubmit = (e) =>{
         e.preventDefault()
-        console.log('hola')
         if (description.trim().length <= 1) {
             return
         }
@@ -69,6 +80,7 @@ export const ToDoApp = () => {
         dispatch(action)
         reset()
     }
+    
 
     return (
         <div className="container mt-4">
@@ -98,22 +110,22 @@ export const ToDoApp = () => {
                 </div>
             </form>
             <div className="row mb-2">
-                <div className="col-12 col-sm-6">
+                <div className="col-12 padre">
                     <ul className="list-group list-group-flush">
                         {
                             toDos.map((toDo, i) => (
                                 <li
                                     key={toDo.id}
                                     className="list-group-item"
-                                ><p className="mb-0">{i+1}. {toDo.desc}</p></li>
+                                ><p className="mb-0">{i+1}. {toDo.desc}</p>
+                                <button
+                                    className="btn btn-danger btn-lg"
+                                    onClick={()=>handleDelete(toDo.id)}
+                                >Borrar</button>
+                                </li>
                             ))
                         }
                     </ul>
-                </div>
-                <div className="col-12 col-sm-6">
-                    <button
-                        className="btn btn-danger btn-block"
-                    >Borrar</button>
                 </div>
             </div>
         </div>

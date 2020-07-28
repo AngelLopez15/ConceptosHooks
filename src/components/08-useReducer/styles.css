@@ -1,6 +1,10 @@
 p{
     cursor: pointer;
+    display: inline-block;
+    padding-right: 4rem;
+    padding-bottom: 1rem;
 }
+
 
 .complete{
     text-decoration: line-through;
