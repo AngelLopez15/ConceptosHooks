@@ -5,6 +5,16 @@ p{
     padding-bottom: 1rem;
 }
 
+.list-group-item{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.delate{
+    width: 20rem;
+}
 
 .complete{
     text-decoration: line-through;

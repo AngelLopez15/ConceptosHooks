@@ -59,6 +59,13 @@ export const ToDoApp = () => {
         dispatch(action)
     }
 
+    const handleToogle=(toDoId)=>{
+        dispatch({
+            type:'toggle',
+            payload:toDoId
+        })
+    }
+
     // añade una nueva tarea
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -109,17 +116,20 @@ export const ToDoApp = () => {
                     </div>
                 </div>
             </form>
-            <div className="row mb-2">
-                <div className="col-12 padre">
+            <div className="row mb-2 justify-content-center">
+                <div className="col-12">
                     <ul className="list-group list-group-flush">
                         {
                             toDos.map((toDo, i) => (
                                 <li
                                     key={toDo.id}
                                     className="list-group-item"
-                                ><p className="mb-0">{i+1}. {toDo.desc}</p>
+                                >
+                                <p className={`mb-0 ${toDo.done && 'complete'}`}
+                                onClick={()=>handleToogle(toDo.id)}
+                                >{i+1}. {toDo.desc}</p>
                                 <button
-                                    className="btn btn-danger btn-lg"
+                                    className="btn btn-danger btn-block delate"
                                     onClick={()=>handleDelete(toDo.id)}
                                 >Borrar</button>
                                 </li>
