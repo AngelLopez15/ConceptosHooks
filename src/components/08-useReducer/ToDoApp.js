@@ -28,8 +28,8 @@ export const ToDoApp = () => {
     // declarando el reducer
     // reducer es la funcion reducer
     // initialstate es el estado inicial
-    // init es una funcion para inicializar el state en caso de que el state
-    // en caso de que el state sea procesado o haga varias acciones. Ya que 
+    // init es una funcion para inicializar el state en caso de 
+    // que el state sea procesado o haga varias acciones. Ya que 
     // cada vez que el componenete se vuelva a ejecutar al ser una funcion externa
     // lo hace mas ligero y rapido. Incluso puede memorizar el resultado para no
     // volverlo a ejecutar en caso de ser necesario.

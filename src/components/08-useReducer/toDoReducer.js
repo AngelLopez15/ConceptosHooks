@@ -1,5 +1,5 @@
 // creando el reducer en un archivo aparte por que 
-// suele suceder que crece mucho esta duncion
+// suele suceder que crece mucho esta funcion
 
 export const todoReducer = (state = [], action) => {
     
@@ -7,6 +7,8 @@ export const todoReducer = (state = [], action) => {
         case 'add':
             return [...state, action.payload]
         case 'delete':
+            // Buscamos todos los toDos que sean diferentes al id del toDo
+            // del payload. Ose el action.payload es igual al toDo.id que no queremos
             return state.filter(toDo=>toDo.id !== action.payload)
         case 'toggle':
             return state.map(toDo=>

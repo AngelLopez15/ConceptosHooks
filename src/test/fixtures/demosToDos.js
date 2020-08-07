@@ -1,0 +1,11 @@
+// Simulando un estado inicial para el toDo
+export const demoTodos = [{
+  id:1,
+  desc:'Aprender React',
+  done:false
+},
+{
+  id:2,
+  desc:'Aprender Node',
+  done:false
+}]
