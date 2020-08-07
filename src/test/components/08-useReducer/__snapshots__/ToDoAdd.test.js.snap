@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <ToDoAdd /> Debe de mostarse correctamente 1`] = `
+<Fragment>
+  <p
+    className="h1"
+  >
+    Agregar tarea
+  </p>
+  <hr />
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="row mb-4"
+    >
+      <div
+        className="col-12 col-sm-6 mb-2"
+      >
+        <input
+          autoComplete="off"
+          className="form-control"
+          name="description"
+          onChange={[Function]}
+          placeholder="comprar ..."
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="col-12 col-sm-6"
+      >
+        <button
+          className="btn btn-success btn-block"
+          type="submit"
+        >
+          Agregar
+        </button>
+      </div>
+    </div>
+  </form>
+</Fragment>
+`;

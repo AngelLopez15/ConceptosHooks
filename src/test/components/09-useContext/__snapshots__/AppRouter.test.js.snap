@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <AppRouter /> Debe de mostrarse correctamente 1`] = `
+<AppRouter>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <div>
+        <Navbar>
+          <nav
+            className="navbar navbar-expand-lg navbar-dark bg-dark"
+          >
+            <Link
+              className="navbar-brand"
+              to="/"
+            >
+              <LinkAnchor
+                className="navbar-brand"
+                href="/"
+                navigate={[Function]}
+              >
+                <a
+                  className="navbar-brand"
+                  href="/"
+                  onClick={[Function]}
+                >
+                  useContext
+                </a>
+              </LinkAnchor>
+            </Link>
+            <div
+              className="navbar-nav"
+            >
+              <NavLink
+                activeClassName="active"
+                className="nav-item nav-link"
+                exact={true}
+                to="/"
+              >
+                <Link
+                  aria-current="page"
+                  className="nav-item nav-link active"
+                  style={Object {}}
+                  to={
+                    Object {
+                      "hash": "",
+                      "pathname": "/",
+                      "search": "",
+                      "state": null,
+                    }
+                  }
+                >
+                  <LinkAnchor
+                    aria-current="page"
+                    className="nav-item nav-link active"
+                    href="/"
+                    navigate={[Function]}
+                    style={Object {}}
+                  >
+                    <a
+                      aria-current="page"
+                      className="nav-item nav-link active"
+                      href="/"
+                      onClick={[Function]}
+                      style={Object {}}
+                    >
+                      Home
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </NavLink>
+              <NavLink
+                activeClassName="active"
+                className="nav-item nav-link"
+                exact={true}
+                to="/login"
+              >
+                <Link
+                  aria-current={null}
+                  className="nav-item nav-link"
+                  to={
+                    Object {
+                      "hash": "",
+                      "pathname": "/login",
+                      "search": "",
+                      "state": null,
+                    }
+                  }
+                >
+                  <LinkAnchor
+                    aria-current={null}
+                    className="nav-item nav-link"
+                    href="/login"
+                    navigate={[Function]}
+                  >
+                    <a
+                      aria-current={null}
+                      className="nav-item nav-link"
+                      href="/login"
+                      onClick={[Function]}
+                    >
+                      Login
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </NavLink>
+              <NavLink
+                activeClassName="active"
+                className="nav-item nav-link"
+                exact={true}
+                to="/about"
+              >
+                <Link
+                  aria-current={null}
+                  className="nav-item nav-link"
+                  to={
+                    Object {
+                      "hash": "",
+                      "pathname": "/about",
+                      "search": "",
+                      "state": null,
+                    }
+                  }
+                >
+                  <LinkAnchor
+                    aria-current={null}
+                    className="nav-item nav-link"
+                    href="/about"
+                    navigate={[Function]}
+                  >
+                    <a
+                      aria-current={null}
+                      className="nav-item nav-link"
+                      href="/about"
+                      onClick={[Function]}
+                    >
+                      About
+                    </a>
+                  </LinkAnchor>
+                </Link>
+              </NavLink>
+            </div>
+          </nav>
+        </Navbar>
+        <div
+          className="container"
+        >
+          <Switch>
+            <Route
+              component={[Function]}
+              computedMatch={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+              exact={true}
+              location={
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                }
+              }
+              path="/"
+            >
+              <HomeScreen
+                history={
+                  Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "createHref": [Function],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "length": 1,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                location={
+                  Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                match={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+              >
+                <div>
+                  <h1>
+                    HomeScreen
+                  </h1>
+                  <hr />
+                  <pre>
+                    {
+   "id": 1,
+   "name": "Angel"
+}
+                  </pre>
+                </div>
+              </HomeScreen>
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
+  </BrowserRouter>
+</AppRouter>
+`;
